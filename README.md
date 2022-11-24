@@ -39,3 +39,124 @@ The next steps are a brief description about how the shell works:
 4. Next, it creates a separate child process suing *fork()* that performs the inputted command. Unless otherwise is specified, the parent process waits for the child to exit before continuing.
 5. After tokening the command, *execve()* function brings and executes it, the it frees all allocated memory with *free()*.
 6. Finally, the program returns to main process: prints the prompt, and waits for another user input.
+
+## Requirements:
+
+* Operating System: [Ubuntu 20.04 LTS](http://releases.ubuntu.com/20.04/)
+
+* Compiler: [GCC 4.8.4](https://gcc.gnu.org/gcc-4.8/)
+
+### General.
+
+- Allowed editors: `vi`, `vim`, `emacs`
+- All your files will be compiled on Ubuntu 14.04 LTS
+- Your programs and functions will be compiled with `gcc 4.8.4` using the flags `-Wall` `-Werror` `-Wextra` and `-pedantic`
+- All your files should end with a new line
+- A `README.md` file, at the root of the folder of the project is mandatory
+- Your code should use the `Betty` style. It will be checked using [betty-style.pl](https://github.com/holbertonschool/Betty/blob/master/betty-style.pl "betty-style.pl") and [betty-doc.pl](https://github.com/holbertonschool/Betty/blob/master/betty-doc.pl "betty-doc.pl")
+- Your shell should not have any memory leaks
+- No more than 5 functions per file
+- All your header files should be include guarded
+
+## Basic beggining
+
+To run this shell with its respective commands its necessary to clone this reposotory in your terminal. Do it like this:
+- HTTPS:
+
+```c
+git clone https://github.com/mecomonteshbtn/simple_shell.git
+```
+
+- SSH:
+
+```
+git clone
+git@github.com:Amkeez252/simple_shell.git
+```
+
+## Compiling, Debugging and Runing
+
+All your files will be compiled on Ubuntu 20.04 LTS using gcc, using the options -Wall -Werror -Wextra -pedantic -std=gnu89
+
+- To **compile** your functions use: `
+
+```
+gcc -Wall -Wextra -Werror -pedantic -Wno-format -g *.c -o Hell_Shell
+```
+- If you want to **debugging** the shell, use valgrind:
+```
+valgrind --leak-check=full ./Hell_Shell
+```
+- Or just **run** and try this shell using:
+```
+./Hell_Shell
+```
+- This program provides a simple manual to know and get familiar with the shell. Open it typing: 
+```
+man ./man_1_simple_shell
+```
+
+## Examples
+
+Here are shown some examples of the usage of the Shell:
+
+- ls
+
+```shell
+Hell_Shell>> ls
+AUTHORS  Hell_Shell  README.md auxiliar_functions.c  create_child.c  dir  execute.c  free_mem.c  generateAUTHORS  man_1_simple_shell  shell.h shell_init.c  tokening.c
+```
+
+```shell
+Hell_Shell>> /bin/ls
+AUTHORS  Hell_Shell  README.md	auxiliar_functions.c  create_child.c  dir  execute.c  free_mem.c  generateAUTHORS  man_1_simple_shell  shell.h shell_init.c  tokening.c
+```
+
+```shell
+Hell_Shell>> ls -lat
+total 88
+drwxrwxr-x 4 vagrant vagrant  4096 Apr 16 17:04 .
+-rw-rw-r-- 1 vagrant vagrant  5502 Apr 16 17:04 README.md
+drwxrwxr-x 2 vagrant vagrant  4096 Apr 16 12:15 dir
+drwxrwxr-x 8 vagrant vagrant  4096 Apr 16 00:20 .git
+-rw-rw-r-- 1 vagrant vagrant  1964 Apr 15 23:17 shell_init.c
+-rw-rw-r-- 1 vagrant vagrant   821 Apr 15 23:17 tokening.c
+-rw-rw-r-- 1 vagrant vagrant   756 Apr 15 23:17 free_mem.c
+-rw-rw-r-- 1 vagrant vagrant  1911 Apr 15 23:17 shell.h
+-rw-rw-r-- 1 vagrant vagrant   702 Apr 15 23:17 create_child.c
+-rw-rw-r-- 1 vagrant vagrant  2364 Apr 15 23:17 execute.c
+-rwxrwxr-x 1 vagrant vagrant 21729 Apr 15 23:17 Hell_Shell
+-rw-rw-r-- 1 vagrant vagrant  1682 Apr 15 23:17 auxiliar_functions.c
+-rw-rw-r-- 1 vagrant vagrant  2600 Apr 14 18:25 man_1_simple_shell
+-rwxrwxr-x 1 vagrant vagrant   392 Apr 13 14:46 generateAUTHORS
+-rw-rw-r-- 1 vagrant vagrant   156 Apr 13 14:46 AUTHORS
+drwxrwxr-x 7 vagrant vagrant  4096 Apr  6 18:22 ..
+```
+- pwd
+
+```shell
+Hell_Shell>> pwd
+/home/vagrant/HOLBERTON/simple_shell
+```
+- echo
+
+```shell
+Hell_Shell>> echo Hello World
+Hello World
+```
+- *Ctrl+D*  and  *Ctrl+C* 
+
+```shell
+Hell_Shell>> ^C
+Hell_Shell>> 
+vagrant@vagrant-ubuntu-trusty-64:~/HOLBERTON/simple_shell$ 
+```
+Node that in the second line the *Ctrl+C*  is typed
+
+
+
+## Authors:
+
+Dauda Sheriffdeen Dayo s.dayo36@yahoo.com
+
+Auwal Abdulmalik auwalamalik@gmail.com
