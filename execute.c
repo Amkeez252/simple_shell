@@ -8,6 +8,7 @@
  * @cicles: Number of executed cicles.
  * Return: Nothing.
  */
+
 void execute(char **command, char *name, char **env, int cicles)
 {
 	char **pathways = NULL, *full_path = NULL;
@@ -47,12 +48,12 @@ void execute(char **command, char *name, char **env, int cicles)
 	}
 }
 
-
 /**
  * print_env - A function that prints all enviromental variables.
  * @env: The pointer to enviromental variables.
  * Return: Nothing.
  */
+
 void print_env(char **env)
 {
 	size_t i = 0, len = 0;
@@ -66,13 +67,13 @@ void print_env(char **env)
 	}
 }
 
-
 /**
  * _getPATH - A function to gets the full value from.
  * enviromental variable PATH.
  * @env: The pointer to enviromental variables.
  * Return: All tokenized pathways for commands.
  */
+
 char **_getPATH(char **env)
 {
 	char *pathvalue = NULL, **pathways = NULL;
@@ -93,7 +94,6 @@ char **_getPATH(char **env)
 	return (NULL);
 }
 
-
 /**
  * msgerror - A function that prints message not found.
  * @name: The name of the shell.
@@ -101,6 +101,7 @@ char **_getPATH(char **env)
  * @command: The pointer to tokenized command.
  * Return: Nothing.
  */
+
 void msgerror(char *name, int cicles, char **command)
 {
 	char c;
@@ -113,3 +114,4 @@ void msgerror(char *name, int cicles, char **command)
 	write(STDOUT_FILENO, command[0], _strlen(command[0]));
 	write(STDOUT_FILENO, ": not found\n", 12);
 }
+
